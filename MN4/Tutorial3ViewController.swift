@@ -16,7 +16,7 @@ class Tutorial3ViewController: UIViewController {
     @IBOutlet weak var word4: UILabel!
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var score: UILabel!
-    @IBOutlet weak var arrow: UIImageView!
+    //@IBOutlet weak var arrow: UIImageView!
     
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
@@ -26,9 +26,9 @@ class Tutorial3ViewController: UIViewController {
         super.viewDidLoad()
 
         //Set background image as newspaper
-        self.view.backgroundColor = Styles.getTexture()
+        self.view.backgroundColor = Styles.backgroundColor
         
-        arrow.alpha = 0
+        //arrow.alpha = 0
         
         word1.font = Styles.getFont()
         word2.font = Styles.getFont()
@@ -38,44 +38,66 @@ class Tutorial3ViewController: UIViewController {
         score.font = Styles.getFont()
         
         tutorialLabel.text = "Você tem um número limitado de vidas"
-        tutorialLabel.layer.borderColor = UIColor.blackColor().CGColor
-        tutorialLabel.layer.borderWidth = 2.5
+        //tutorialLabel.layer.borderColor = UIColor.blackColor().CGColor
+        tutorialLabel.layer.borderWidth = 0
+        
+        tutorialLabel.layer.cornerRadius = tutorialLabel.frame.height/4
+        tutorialLabel.layer.masksToBounds = true
         
         //Buttons border
-        word1.layer.borderWidth = 2.5
-        word1.layer.borderColor = UIColor.blackColor().CGColor
-        word2.layer.borderWidth = 2.5
-        word2.layer.borderColor = UIColor.blackColor().CGColor
-        word3.layer.borderWidth = 2.5
-        word3.layer.borderColor = UIColor.blackColor().CGColor
-        word4.layer.borderWidth = 2.5
-        word4.layer.borderColor = UIColor.blackColor().CGColor
+        word1.layer.borderWidth = 0
+        //word1.layer.borderColor = UIColor.blackColor().CGColor
+        word2.layer.borderWidth = 0
+        //word2.layer.borderColor = UIColor.blackColor().CGColor
+        word3.layer.borderWidth = 0
+        //word3.layer.borderColor = UIColor.blackColor().CGColor
+        word4.layer.borderWidth = 0
+        //wordButton.layer.borderColor = UIColor.blackColor().CGColor
+        
+        word1.layer.cornerRadius = word1.frame.height/4
+        word1.layer.masksToBounds = true
+        word2.layer.cornerRadius = word2.frame.height/4
+        word2.layer.masksToBounds = true
+        word3.layer.cornerRadius = word3.frame.height/4
+        word3.layer.masksToBounds = true
+        word4.layer.cornerRadius = word4.frame.height/4
+        word4.layer.masksToBounds = true
       
         //Set Hearts
         heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart1.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart1.tintColor = Styles.heartColor
         heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart2.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart2.tintColor = Styles.heartColor
         heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart3.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart3.tintColor = Styles.heartColor
     }
   
     override func viewDidAppear(animated: Bool) {
         
         
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(1.3, delay: 0, options: .Repeat ,animations: { () -> Void in
             
+            self.heart1.tintColor = UIColor.whiteColor()
+            self.heart2.tintColor = UIColor.whiteColor()
+            self.heart3.tintColor = UIColor.whiteColor()
+            /*
             self.arrow.alpha = 1
             self.arrow.frame.origin.y = self.arrow.frame.origin.y - 30
             self.view.layoutIfNeeded()
-            
+            */
             }, completion: {(result) -> Void in
                 
-                UIView.animateWithDuration(1, animations: { () -> Void in
+                UIView.animateWithDuration(1.3, animations: { () -> Void in
+                    
+                    self.heart1.tintColor = Styles.heartColor
+                    self.heart2.tintColor = Styles.heartColor
+                    self.heart3.tintColor = Styles.heartColor
+                    /*
                     self.arrow.alpha = 0
                     self.arrow.frame.origin.y = self.arrow.frame.origin.y + 30
                     self.view.layoutIfNeeded()
+*/
                 })
                 
         }) //End of completion

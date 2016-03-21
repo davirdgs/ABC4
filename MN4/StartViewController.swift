@@ -26,13 +26,19 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         //Set background image as newspaper
-        self.view.backgroundColor = Styles.getTexture()
+        self.view.backgroundColor = Styles.backgroundColor
         
-        tutorialButton.layer.borderColor = UIColor.blackColor().CGColor
-        tutorialButton.layer.borderWidth = 2.5
-        playButton.layer.borderColor = UIColor.blackColor().CGColor
-        playButton.layer.borderWidth = 2.5
+        //tutorialButton.layer.borderColor = UIColor.blackColor().CGColor
+        tutorialButton.layer.borderWidth = 0
+        //playButton.layer.borderColor = UIColor.blackColor().CGColor
+        playButton.layer.borderWidth = 0
+        
+        tutorialButton.layer.cornerRadius = tutorialButton.frame.height/4
+        tutorialButton.layer.masksToBounds = true
       
+        playButton.layer.cornerRadius = playButton.frame.height/4
+        playButton.layer.masksToBounds = true
+        
         //Set Trophy
         scoreIcon.image = scoreIcon.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         scoreIcon.tintColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0)

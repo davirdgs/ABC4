@@ -17,7 +17,7 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var word2: UILabel!
     @IBOutlet weak var word3: UILabel!
     
-    @IBOutlet weak var imageView: UIImageView!
+    //@IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
@@ -32,31 +32,45 @@ class TutorialViewController: UIViewController {
         word3.font = Styles.getFont()
         instructionLabel.font = Styles.getFont()
         
+        self.view.backgroundColor = Styles.backgroundColor
+        
         //Buttons border
-        word1.layer.borderWidth = 2.5
-        word1.layer.borderColor = UIColor.blackColor().CGColor
-        word2.layer.borderWidth = 2.5
-        word2.layer.borderColor = UIColor.blackColor().CGColor
-        word3.layer.borderWidth = 2.5
-        word3.layer.borderColor = UIColor.blackColor().CGColor
-        wordButton.layer.borderWidth = 2.5
-        wordButton.layer.borderColor = UIColor.blackColor().CGColor
+        word1.layer.borderWidth = 0
+        //word1.layer.borderColor = UIColor.blackColor().CGColor
+        word2.layer.borderWidth = 0
+        //word2.layer.borderColor = UIColor.blackColor().CGColor
+        word3.layer.borderWidth = 0
+        //word3.layer.borderColor = UIColor.blackColor().CGColor
+        wordButton.layer.borderWidth = 0
+        //wordButton.layer.borderColor = UIColor.blackColor().CGColor
         
         wordButton.titleLabel!.font = Styles.getFont()
-      
+        
+        word1.layer.cornerRadius = word1.frame.height/4
+        word1.layer.masksToBounds = true
+        word2.layer.cornerRadius = word2.frame.height/4
+        word2.layer.masksToBounds = true
+        word3.layer.cornerRadius = word3.frame.height/4
+        word3.layer.masksToBounds = true
+        wordButton.layer.cornerRadius = wordButton.frame.height/4
+        wordButton.layer.masksToBounds = true
+        
         //Set Hearts
         heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart1.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart1.tintColor = Styles.heartColor
         heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart2.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart2.tintColor = Styles.heartColor
         heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart3.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart3.tintColor = Styles.heartColor
       
         instructionLabel.text = "Enconte a palavra que não pertence ao conjunto"
-        instructionLabel.layer.borderColor = UIColor.blackColor().CGColor
-        instructionLabel.layer.borderWidth = 2.5
+        //instructionLabel.layer.borderColor = UIColor.blackColor().CGColor
+        instructionLabel.layer.borderWidth = 0
         
-        imageView.alpha = 0
+        instructionLabel.layer.cornerRadius = instructionLabel.frame.height/4
+        instructionLabel.layer.masksToBounds = true
+        
+        //imageView.alpha = 0
         
     }
     
@@ -64,19 +78,27 @@ class TutorialViewController: UIViewController {
         
         UIView.animateWithDuration(1, animations: { () -> Void in
             
+            self.wordButton.alpha = 0.3
+            
+            /*
             self.imageView.frame.origin.y = self.imageView.frame.origin.y - 30
             self.view.layoutIfNeeded()
             
             self.imageView.alpha = 1
+*/
             
             }, completion: {(result) -> Void in
                 
                 UIView.animateWithDuration(1, animations: { () -> Void in
+                    
+                    self.wordButton.alpha = 1
+                    /*
                     self.imageView.alpha = 0
                     self.imageView.frame.origin.y = self.imageView.frame.origin.y + 30
                     self.view.layoutIfNeeded()
+*/
                 })
-                
+
         }) //End of completion
     }
   

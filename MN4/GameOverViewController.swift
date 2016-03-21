@@ -26,7 +26,7 @@ class GameOverViewController: UIViewController, UIGestureRecognizerDelegate {
         let record = defaults.integerForKey("Record")
 
         //Set background image as newspaper
-        self.view.backgroundColor = Styles.getTexture()
+        self.view.backgroundColor = Styles.backgroundColor
         
         gameOverLabel.font = Styles.getFont()
         scoreLabel.font = Styles.getFont()

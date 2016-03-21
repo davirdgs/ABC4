@@ -38,30 +38,39 @@ class GameViewController: UIViewController {
         scoreLabel.text = PlayerStatus.getScoreString()
         
         //Set background image/color
-        self.view.backgroundColor = Styles.getTexture()
+        //self.view.backgroundColor = Styles.getTexture()
         //self.view.backgroundColor = UIColor(red: 58/255, green: 135/255, blue: 185/255, alpha: 1.0)
         //self.view.backgroundColor = UIColor(red: 76/255, green: 70/255, blue: 127/255, alpha: 1.0)
-
-
+        
+        self.view.backgroundColor = Styles.backgroundColor
+        
+        option1.layer.cornerRadius = option1.frame.height/4
+        option1.layer.masksToBounds = true
+        option2.layer.cornerRadius = option1.frame.height/4
+        option2.layer.masksToBounds = true
+        option3.layer.cornerRadius = option1.frame.height/4
+        option3.layer.masksToBounds = true
+        option4.layer.cornerRadius = option1.frame.height/4
+        option4.layer.masksToBounds = true
       
         //Set Hearts
         heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart1.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart1.tintColor = Styles.heartColor
         heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart2.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart2.tintColor = Styles.heartColor
         heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart3.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart3.tintColor = Styles.heartColor
       
         
         //Buttons border
-        option1.layer.borderWidth = 2.5
-        option1.layer.borderColor = UIColor.blackColor().CGColor
-        option2.layer.borderWidth = 2.5
-        option2.layer.borderColor = UIColor.blackColor().CGColor
-        option3.layer.borderWidth = 2.5
-        option3.layer.borderColor = UIColor.blackColor().CGColor
-        option4.layer.borderWidth = 2.5
-        option4.layer.borderColor = UIColor.blackColor().CGColor
+        option1.layer.borderWidth = 0
+        //option1.layer.borderColor = UIColor.blackColor().CGColor
+        option2.layer.borderWidth = 0
+        //option2.layer.borderColor = UIColor.blackColor().CGColor
+        option3.layer.borderWidth = 0
+        //option3.layer.borderColor = UIColor.blackColor().CGColor
+        option4.layer.borderWidth = 0
+        //option4.layer.borderColor = UIColor.blackColor().CGColor
         
         
         //Set font style

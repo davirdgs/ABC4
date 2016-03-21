@@ -27,6 +27,10 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var verticalArrow: UIImageView!
     @IBOutlet weak var verticalArrow2: UIImageView!
     
+    
+    @IBOutlet weak var auxiliarView1: UIView!
+    @IBOutlet weak var auxiliarView2: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +38,7 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         verticalArrow2.alpha = 0
         
         //Set background image as newspaper
-        self.view.backgroundColor = Styles.getTexture()
+        self.view.backgroundColor = Styles.backgroundColor
         
         word1.font = Styles.getFont()
         word2.font = Styles.getFont()
@@ -44,28 +48,28 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
       
         //Set Hearts
         heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart1.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart1.tintColor = Styles.heartColor
         heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart2.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart2.tintColor = Styles.heartColor
         heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        heart3.tintColor = UIColor(red: 0xb1/255, green: 0x00/255, blue: 0x5d/255, alpha: 1.0)
+        heart3.tintColor = Styles.heartColor
       
         //Buttons border
-        word1.layer.borderWidth = 2.5
-        word1.layer.borderColor = UIColor.blackColor().CGColor
-        word2.layer.borderWidth = 2.5
-        word2.layer.borderColor = UIColor.blackColor().CGColor
-        word3.layer.borderWidth = 2.5
-        word3.layer.borderColor = UIColor.blackColor().CGColor
-        word4.layer.borderWidth = 2.5
-        word4.layer.borderColor = UIColor.blackColor().CGColor
+        word1.layer.borderWidth = 0
+        word2.layer.borderWidth = 0
+        word3.layer.borderWidth = 0
+        word4.layer.borderWidth = 0
+        
+        word1.layer.cornerRadius = word1.frame.height/4
+        word1.layer.masksToBounds = true
+        word2.layer.cornerRadius = word2.frame.height/4
+        word2.layer.masksToBounds = true
+        word3.layer.cornerRadius = word3.frame.height/4
+        word3.layer.masksToBounds = true
+        word4.layer.cornerRadius = word4.frame.height/4
+        word4.layer.masksToBounds = true
         
         score.font = Styles.getFont()
-        score.textColor = UIColor.blueColor()
-        
-        countdown.textColor = UIColor.orangeColor()
-        
-        //inclinedArrow.transform = CGAffineTransformMakeRotation(-45*CGFloat(M_PI)/180)
         
 
         let attributedString2 = NSMutableAttributedString(string:"pontos", attributes:Styles.attributesScore)
@@ -82,32 +86,43 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         
         tutorialLabel.attributedText = finalString
-        tutorialLabel.layer.borderColor = UIColor.blackColor().CGColor
-        tutorialLabel.layer.borderWidth = 2.5
+        tutorialLabel.layer.borderWidth = 0
+        
+        tutorialLabel.layer.cornerRadius = tutorialLabel.frame.height/4
+        tutorialLabel.layer.masksToBounds = true
+        auxiliarView1.layer.cornerRadius = auxiliarView1.frame.height/4
+        auxiliarView1.layer.masksToBounds = true
+        
+        auxiliarView1.alpha = 0.3
+        
+        auxiliarView2.layer.cornerRadius = auxiliarView2.frame.height/4
+        auxiliarView2.layer.masksToBounds = true
+        
+        auxiliarView2.alpha = 0.3
 
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(1.3, delay: 0, options: .Repeat, animations: { () -> Void in
             
-            self.verticalArrow.alpha = 1
-            self.verticalArrow2.alpha = 1
-            self.verticalArrow.frame.origin.y = self.verticalArrow.frame.origin.y - 30
-            self.verticalArrow2.frame.origin.y = self.verticalArrow2.frame.origin.y - 30
-            //self.inclinedArrow.frame.origin.x = self.inclinedArrow.frame.origin.x - 30
-            self.view.layoutIfNeeded()
+            self.auxiliarView1.alpha = 1
+            self.countdown.textColor = UIColor.orangeColor()
+            
+            self.auxiliarView2.alpha = 1
+            self.score.textColor = UIColor.blueColor()
+
             
             }, completion: {(result) -> Void in
                 
-                UIView.animateWithDuration(1, animations: { () -> Void in
+                UIView.animateWithDuration(1.3, animations: { () -> Void in
                     
-                    self.verticalArrow.alpha = 0
-                    self.verticalArrow2.alpha = 0
-                    self.verticalArrow.frame.origin.y = self.verticalArrow.frame.origin.y + 30
-                    self.verticalArrow2.frame.origin.y = self.verticalArrow2.frame.origin.y + 30
-                    //self.inclinedArrow.frame.origin.x = self.inclinedArrow.frame.origin.x + 30
-                    self.view.layoutIfNeeded()
+                    self.auxiliarView1.alpha = 0
+                    self.countdown.textColor = UIColor.whiteColor()
+                    
+                    self.auxiliarView2.alpha = 0
+                    self.countdown.textColor = UIColor.whiteColor()
+                    
                 })
                 
         }) //End of completion

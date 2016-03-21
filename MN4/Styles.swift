@@ -25,6 +25,8 @@ class Styles: NSObject {
     ]
     ///Background image: newspaper
     static let backgroundTexture = UIColor(patternImage: UIImage(named: "newspaper")!)
+    static let backgroundColor = UIColor(red: 76/255, green: 90/255, blue: 255/255, alpha: 1)
+    static let heartColor = UIColor(red: 255/255, green: 100/255, blue: 100/255, alpha: 1)
     
     ///Font: American typewriter 25 black
     static func getFont() -> UIFont {
