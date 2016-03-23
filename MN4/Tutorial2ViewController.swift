@@ -23,19 +23,12 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
     @IBOutlet weak var heart3: UIImageView!
-  
-    @IBOutlet weak var verticalArrow: UIImageView!
-    @IBOutlet weak var verticalArrow2: UIImageView!
-    
     
     @IBOutlet weak var auxiliarView1: UIView!
     @IBOutlet weak var auxiliarView2: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        verticalArrow.alpha = 0
-        verticalArrow2.alpha = 0
         
         //Set background image as newspaper
         self.view.backgroundColor = Styles.backgroundColor
