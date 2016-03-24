@@ -78,7 +78,8 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         finalString.appendAttributedString(attributedString5)
         
         
-        tutorialLabel.attributedText = ProjectStrings.instructionString2
+        //tutorialLabel.attributedText = ProjectStrings.instructionString2
+        tutorialLabel.text = ProjectStrings.instructionString2
         tutorialLabel.layer.borderWidth = 0
         
         tutorialLabel.layer.cornerRadius = tutorialLabel.frame.height/4

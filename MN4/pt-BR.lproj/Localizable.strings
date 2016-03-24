@@ -1,0 +1,15 @@
+/* Primeira instrução do tutorial */
+"instructionString1" = "Encontre a palavra que não pertence ao grupo";
+
+/* Segunda instrução do tutorial */
+"instructionString2" = "Faça o maior numero de pontos antes que o tempo termine";
+
+/* Terceira instrução do tutorial */
+"instructionString3" = "Você tem um número limitado de vidas";
+
+/* Record */
+"newRecord" = "Novo Record!";
+
+/* Score */
+"score" = "Você fez %d pontos!";
+

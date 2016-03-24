@@ -18,10 +18,11 @@ class WordDataBaseSpanish: NSObject {
                 Word(word: "Abelha", difficulty: "Easy"),
                 Word(word: "Águia", difficulty: "Easy")]
             ),
-            Category(categoryId: 0, categoryName: "animals", words: [
+            Category(categoryId: 2, categoryName: "adverbs", words: [
                 Word(word: "Abelha", difficulty: "Easy"),
                 Word(word: "Águia", difficulty: "Easy")]
             )]
+
     }
     
     static func getDataBase()->[Category] {

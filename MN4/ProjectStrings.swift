@@ -11,10 +11,10 @@ import Foundation
 
 class ProjectStrings {
 
-    static let instructionString1 = NSLocalizedString("instructionString1", value:"Enconte a palavra que não pertence ao conjunto", comment: "Primeira instrução do tutorial")
-    static let instructionString2 = NSLocalizedString("instructionString2", value:"Faça o maior numero de pontos antes que o tempo acabe", comment: "Segunda instrução do tutorial")
-    static let instructionString3 = NSLocalizedString("instructionString3", value:"Você tem um número limitado de vidas", comment: "Terceira instrução do tutorial")
-    static let newRecord = NSLocalizedString("newRecord", value:"Novo Record!", comment: "Record")
-    static let score = NSLocalizedString("score", value: "Você fez %d pontos", comment: "Score")
+    static let instructionString1 = NSLocalizedString("instructionString1", value:"Find the word that don't belongs to the group", comment: "Primeira instrução do tutorial")
+    static let instructionString2 = NSLocalizedString("instructionString2", value:"Elevate your score before time runs out", comment: "Segunda instrução do tutorial")
+    static let instructionString3 = NSLocalizedString("instructionString3", value:"You have a limited number of lives", comment: "Terceira instrução do tutorial")
+    static let newRecord = NSLocalizedString("newRecord", value:"New Record!", comment: "Record")
+    static let score = NSLocalizedString("score", value: "You did %d points!", comment: "Score")
     
 }
