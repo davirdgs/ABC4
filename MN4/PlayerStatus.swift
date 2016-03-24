@@ -36,15 +36,15 @@ class PlayerStatus {
     }
     
     static func lostLife() {
-        self.lifes--
+        self.lifes -= 1
     }
     
     static func gainLife() {
-        self.lifes++
+        self.lifes += 1
     }
     
     static func scorePlus() {
-        self.score++
+        self.score += 1
     }
     
     static func saveRecord() {

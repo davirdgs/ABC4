@@ -102,7 +102,7 @@ class Level {
         
         let size: Int = self.levelWords.count
         
-        for (var i=0; i<size; i++) {
+        for (var i=0; i<size; i += 1) {
             let j = i + Int(arc4random_uniform(UInt32(size-i)))
             if(j<size && !(j==i)) {
                 swap(&levelWords[i], &levelWords[j])

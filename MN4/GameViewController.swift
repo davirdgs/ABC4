@@ -81,7 +81,7 @@ class GameViewController: UIViewController {
         option4.titleLabel!.font = Styles.getFont()
         
         //Setting the countdown
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.subtractTime), userInfo: nil, repeats: true)
  
         setNewLevel()
     }
@@ -198,7 +198,7 @@ class GameViewController: UIViewController {
 
     func subtractTime() {
         
-        seconds--
+        seconds -= 1
         countdown.text = "\(seconds)"
         if seconds == 0{
             playerMissed()

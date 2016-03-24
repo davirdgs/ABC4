@@ -33,8 +33,8 @@ class GameOverViewController: UIViewController, UIGestureRecognizerDelegate {
         recordLabel.font = Styles.getFont()
         
         gameOverLabel.text = "Game Over"
-        scoreLabel.text = NSString(format: "Você fez %d pontos", score) as String
-        recordLabel.text = "Novo Record!"
+        scoreLabel.text = NSString(format: ProjectStrings.score, score) as String
+        recordLabel.text = ProjectStrings.newRecord
         
         if(PlayerStatus.score > record) {
             PlayerStatus.saveRecord()

@@ -63,7 +63,7 @@ class TutorialViewController: UIViewController {
         heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         heart3.tintColor = Styles.heartColor
       
-        instructionLabel.text = "Enconte a palavra que não pertence ao conjunto"
+        instructionLabel.text = ProjectStrings.instructionString1
         //instructionLabel.layer.borderColor = UIColor.blackColor().CGColor
         instructionLabel.layer.borderWidth = 0
         

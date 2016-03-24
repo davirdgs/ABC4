@@ -19,6 +19,9 @@
 		5529DC151B8B40B100871DB2 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529DC141B8B40B100871DB2 /* PlayerStatus.swift */; };
 		5529DC191B8B587F00871DB2 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5529DC181B8B587F00871DB2 /* Tutorial1.xib */; };
 		5529DC1B1B8B598E00871DB2 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529DC1A1B8B598E00871DB2 /* GameOverViewController.swift */; };
+		55528B241CA45622003F7007 /* ProjectStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55528B231CA45622003F7007 /* ProjectStrings.swift */; };
+		55528B261CA45BF9003F7007 /* WordDataBaseEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55528B251CA45BF9003F7007 /* WordDataBaseEnglish.swift */; };
+		55528B281CA45C94003F7007 /* WordDataBaseSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55528B271CA45C94003F7007 /* WordDataBaseSpanish.swift */; };
 		559920BF1B865B9B00743303 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559920BE1B865B9B00743303 /* StartViewController.swift */; };
 		559920C11B865BD800743303 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559920C01B865BD800743303 /* GameViewController.swift */; };
 		559920C31B8668F100743303 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559920C21B8668F100743303 /* TutorialViewController.swift */; };
@@ -55,6 +58,9 @@
 		5529DC141B8B40B100871DB2 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
 		5529DC181B8B587F00871DB2 /* Tutorial1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial1.xib; sourceTree = "<group>"; };
 		5529DC1A1B8B598E00871DB2 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		55528B231CA45622003F7007 /* ProjectStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectStrings.swift; sourceTree = "<group>"; };
+		55528B251CA45BF9003F7007 /* WordDataBaseEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDataBaseEnglish.swift; sourceTree = "<group>"; };
+		55528B271CA45C94003F7007 /* WordDataBaseSpanish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDataBaseSpanish.swift; sourceTree = "<group>"; };
 		559920BE1B865B9B00743303 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		559920C01B865BD800743303 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		559920C21B8668F100743303 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				51FEB4261B8B652F003080BE /* Level.swift */,
 				55F7F2F11B875B2B00AB7159 /* Styles.swift */,
 				5529DC141B8B40B100871DB2 /* PlayerStatus.swift */,
+				55528B231CA45622003F7007 /* ProjectStrings.swift */,
+				55528B251CA45BF9003F7007 /* WordDataBaseEnglish.swift */,
+				55528B271CA45C94003F7007 /* WordDataBaseSpanish.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 				51FEB4271B8B652F003080BE /* Level.swift in Sources */,
 				51B04D2F1B86538F0010543A /* AppDelegate.swift in Sources */,
 				51FEB4111B8924B3003080BE /* Word.swift in Sources */,
+				55528B281CA45C94003F7007 /* WordDataBaseSpanish.swift in Sources */,
 				55F7F2F21B875B2B00AB7159 /* Styles.swift in Sources */,
 				5529DC1B1B8B598E00871DB2 /* GameOverViewController.swift in Sources */,
 				55F1D7ED1B90B1D100C25E88 /* Tutorial3ViewController.swift in Sources */,
@@ -292,6 +302,8 @@
 				51FEB4101B8924B3003080BE /* Category.swift in Sources */,
 				55B79F9B1B8CAA07000C0079 /* Tutorial1.swift in Sources */,
 				55B6BA891B8F73DC0055535B /* Tutorial2ViewController.swift in Sources */,
+				55528B241CA45622003F7007 /* ProjectStrings.swift in Sources */,
+				55528B261CA45BF9003F7007 /* WordDataBaseEnglish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,7 @@ class Tutorial3ViewController: UIViewController {
         tutorialLabel.font = Styles.getFont()
         score.font = Styles.getFont()
         
-        tutorialLabel.text = "Você tem um número limitado de vidas"
+        tutorialLabel.text = ProjectStrings.instructionString3
         //tutorialLabel.layer.borderColor = UIColor.blackColor().CGColor
         tutorialLabel.layer.borderWidth = 0
         
@@ -46,13 +46,9 @@ class Tutorial3ViewController: UIViewController {
         
         //Buttons border
         word1.layer.borderWidth = 0
-        //word1.layer.borderColor = UIColor.blackColor().CGColor
         word2.layer.borderWidth = 0
-        //word2.layer.borderColor = UIColor.blackColor().CGColor
         word3.layer.borderWidth = 0
-        //word3.layer.borderColor = UIColor.blackColor().CGColor
         word4.layer.borderWidth = 0
-        //wordButton.layer.borderColor = UIColor.blackColor().CGColor
         
         word1.layer.cornerRadius = word1.frame.height/4
         word1.layer.masksToBounds = true
@@ -81,11 +77,7 @@ class Tutorial3ViewController: UIViewController {
             self.heart1.tintColor = UIColor.whiteColor()
             self.heart2.tintColor = UIColor.whiteColor()
             self.heart3.tintColor = UIColor.whiteColor()
-            /*
-            self.arrow.alpha = 1
-            self.arrow.frame.origin.y = self.arrow.frame.origin.y - 30
-            self.view.layoutIfNeeded()
-            */
+
             }, completion: {(result) -> Void in
                 
                 UIView.animateWithDuration(1.3, animations: { () -> Void in
@@ -93,11 +85,7 @@ class Tutorial3ViewController: UIViewController {
                     self.heart1.tintColor = Styles.heartColor
                     self.heart2.tintColor = Styles.heartColor
                     self.heart3.tintColor = Styles.heartColor
-                    /*
-                    self.arrow.alpha = 0
-                    self.arrow.frame.origin.y = self.arrow.frame.origin.y + 30
-                    self.view.layoutIfNeeded()
-*/
+                    
                 })
                 
         }) //End of completion
