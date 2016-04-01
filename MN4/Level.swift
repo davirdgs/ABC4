@@ -22,8 +22,18 @@ class Level {
 
     init() {
         
+        let langId = NSLocale.preferredLanguages()[0]
+        print(langId)
+        
         // Gets the dataBase
-        self.dataBase = WordDataBase.getDataBase()
+        if(langId == "pt-BR" || langId == "pt-PT") {
+            self.dataBase = WordDataBase.getDataBase()
+        } else if(langId == "es-BR" || langId == "es-ES" || langId == "es-419" || langId == "es-MX") {
+            self.dataBase = WordDataBaseSpanish.getDataBase()
+        } else {
+            self.dataBase = WordDataBaseEnglish.getDataBase()
+        }
+        
         self.rightCategoryId = 0
         self.wrongCategoryId = 0
         self.wrongWord = Word(word: "", difficulty: "")
@@ -102,7 +112,7 @@ class Level {
         
         let size: Int = self.levelWords.count
         
-        for (var i=0; i<size; i += 1) {
+        for i in 0...(size - 1) {//(var i=0; i<size; i += 1) {
             let j = i + Int(arc4random_uniform(UInt32(size-i)))
             if(j<size && !(j==i)) {
                 swap(&levelWords[i], &levelWords[j])

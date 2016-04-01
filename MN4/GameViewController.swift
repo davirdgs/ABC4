@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class GameViewController: UIViewController {
 
@@ -209,6 +210,7 @@ class GameViewController: UIViewController {
         
         PlayerStatus.lostLife()
         updateHearts()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         if PlayerStatus.lifes < 0 {
             timer.invalidate()
             performSegueWithIdentifier("toGameOverViewController", sender: self)

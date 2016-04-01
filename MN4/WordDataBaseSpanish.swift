@@ -15,13 +15,65 @@ class WordDataBaseSpanish: NSObject {
     static func setDataBase() {
         self.dataBase = [
             Category(categoryId: 0, categoryName: "animals", words: [
-                Word(word: "Abelha", difficulty: "Easy"),
-                Word(word: "Águia", difficulty: "Easy")]
-            ),
+                
+                ]),
+            
+            Category(categoryId: 1, categoryName: "fruits", words: [
+                
+                ]),
+            
             Category(categoryId: 2, categoryName: "adverbs", words: [
-                Word(word: "Abelha", difficulty: "Easy"),
-                Word(word: "Águia", difficulty: "Easy")]
-            )]
+                ]),
+            
+            Category(categoryId: 3, categoryName: "collectives", words: [
+                ]),
+            
+            Category(categoryId: 4, categoryName: "adjectives", words: [
+                ]),
+            
+            Category(categoryId: 5, categoryName: "coins", words: [
+                
+                ]),
+            
+            Category(categoryId: 6, categoryName: "clothes", words: [
+                
+                ]),
+            
+            Category(categoryId: 7, categoryName: "home appliances", words: [
+                
+                ]),
+            
+            Category(categoryId: 8, categoryName: "countries", words: [
+                
+                ]),
+            
+            Category(categoryId: 9, categoryName: "martial arts", words: [
+
+                ]),
+            
+            Category(categoryId: 10, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 11, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 12, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 13, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 14, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 15, categoryName: "countries", words: [
+                
+                ]),
+            Category(categoryId: 16, categoryName: "countries", words: [
+                
+                ])
+            
+        ]
 
     }
     
