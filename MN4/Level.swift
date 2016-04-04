@@ -55,7 +55,6 @@ class Level {
         // Randomly chooses the category Ids of the right and wrong words
         self.rightCategoryId = arc4random_uniform(UInt32(dataBase.count))
         self.wrongCategoryId = arc4random_uniform(UInt32(dataBase.count))
-        
         // Loops until an acceptable wrong category Id is generated
         while wrongCategoryId == rightCategoryId {
             self.wrongCategoryId = arc4random_uniform(UInt32(dataBase.count))

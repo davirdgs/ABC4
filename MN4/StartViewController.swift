@@ -53,6 +53,8 @@ class StartViewController: UIViewController {
         
         // Creates the dataBase
         WordDataBase.setDataBase()
+        WordDataBaseEnglish.setDataBase()
+        WordDataBaseSpanish.setDataBase()
         
     }
     

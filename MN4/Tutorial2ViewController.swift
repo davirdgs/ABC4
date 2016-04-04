@@ -100,11 +100,9 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         UIView.animateWithDuration(1.3, delay: 0, options: .Repeat, animations: { () -> Void in
             
-            self.auxiliarView1.alpha = 1
-            self.countdown.textColor = UIColor.orangeColor()
+            self.auxiliarView1.alpha = 0.5
             
-            self.auxiliarView2.alpha = 1
-            self.score.textColor = UIColor.blueColor()
+            self.auxiliarView2.alpha = 0.5
 
             
             }, completion: {(result) -> Void in
