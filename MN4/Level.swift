@@ -23,7 +23,7 @@ class Level {
     init() {
         
         let langId = NSLocale.preferredLanguages()[0]
-        print(langId)
+        //print(langId)
         
         // Gets the dataBase
         if(langId == "pt-BR" || langId == "pt-PT") {
