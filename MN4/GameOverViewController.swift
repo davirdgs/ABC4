@@ -22,8 +22,8 @@ class GameOverViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         let score = PlayerStatus.getScore()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let record = defaults.integerForKey("Record")
+        let defaults = UserDefaults.standard
+        let record = defaults.integer(forKey: "Record")
 
         //Set background image as newspaper
         self.view.backgroundColor = Styles.backgroundColor
@@ -33,21 +33,21 @@ class GameOverViewController: UIViewController, UIGestureRecognizerDelegate {
         recordLabel.font = Styles.getFont()
         
         gameOverLabel.text = "Game Over"
-        scoreLabel.text = NSString(format: ProjectStrings.score, score) as String
+        scoreLabel.text = NSString(format: ProjectStrings.score as NSString, score) as String
         recordLabel.text = ProjectStrings.newRecord
         
         if(PlayerStatus.score > record) {
             PlayerStatus.saveRecord()
-            trophyImage.image = trophyImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            trophyImage.image = trophyImage.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             trophyImage.tintColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0)
             trophyImage.layer.shadowOffset = CGSize(width: 1, height: 1)
             trophyImage.layer.shadowOpacity = 1
             trophyImage.layer.shadowRadius = 1
-            trophyImage.hidden = false
-            recordLabel.hidden = false
+            trophyImage.isHidden = false
+            recordLabel.isHidden = false
         } else {
-            trophyImage.hidden = true
-            recordLabel.hidden = true
+            trophyImage.isHidden = true
+            recordLabel.isHidden = true
         }
     }
 
@@ -57,11 +57,11 @@ class GameOverViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     // Hide status bar from this view
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
       return true
     }
   
-    @IBAction func tapReceived(sender: AnyObject) {
+    @IBAction func tapReceived(_ sender: AnyObject) {
         
     }
 }

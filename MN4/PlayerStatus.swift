@@ -12,7 +12,7 @@ class PlayerStatus {
    
     static var lifes: Int = 0
     static var score: Int = 0
-    static let defauts = NSUserDefaults.standardUserDefaults()
+    static let defauts = UserDefaults.standard
     
     static func initGame() {
         self.lifes = 3
@@ -48,11 +48,11 @@ class PlayerStatus {
     }
     
     static func saveRecord() {
-        defauts.setInteger(self.score, forKey: "Record")
+        defauts.set(self.score, forKey: "Record")
     }
     
     static func getRecord() -> Int {
-        return defauts.integerForKey("Record")
+        return defauts.integer(forKey: "Record")
     }
     
 }

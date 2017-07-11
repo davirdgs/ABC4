@@ -10,7 +10,7 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
 
     ///Displays score
     @IBOutlet weak var scoreLabel: UILabel!
@@ -40,7 +40,7 @@ class StartViewController: UIViewController {
         playButton.layer.masksToBounds = true
         
         //Set Trophy
-        scoreIcon.image = scoreIcon.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        scoreIcon.image = scoreIcon.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         scoreIcon.tintColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0)
         scoreIcon.layer.shadowOffset = CGSize(width: 1, height: 1)
         scoreIcon.layer.shadowOpacity = 1
@@ -58,9 +58,9 @@ class StartViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 
-        let record = defaults.integerForKey("Record")
+        let record = defaults.integer(forKey: "Record")
         scoreLabel.text = String(format: "%03d", record)
     }
 
@@ -69,21 +69,21 @@ class StartViewController: UIViewController {
     }
   
     // Hide status bar from this view
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
       return true
     }
   
-    @IBAction func tutorialButtonHandler(sender: AnyObject) {
-        performSegueWithIdentifier("toTutorialViewController", sender: self)
+    @IBAction func tutorialButtonHandler(_ sender: AnyObject) {
+        performSegue(withIdentifier: "toTutorialViewController", sender: self)
     }
 
-    @IBAction func playButtonHandler(sender: AnyObject) {
+    @IBAction func playButtonHandler(_ sender: AnyObject) {
         let level = Level()
         level.setLevel()
-        performSegueWithIdentifier("toGameViewController", sender: self)
+        performSegue(withIdentifier: "toGameViewController", sender: self)
     }
 
-    @IBAction func returnToStart(sender: UIStoryboardSegue) {
+    @IBAction func returnToStart(_ sender: UIStoryboardSegue) {
         
     }
 }

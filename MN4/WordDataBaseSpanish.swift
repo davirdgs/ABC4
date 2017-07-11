@@ -10,7 +10,7 @@ import UIKit
 
 class WordDataBaseSpanish: NSObject {
 
-    private static var dataBase: [Category] = [Category]()
+    fileprivate static var dataBase: [Category] = [Category]()
     
     static func setDataBase() {
         self.dataBase = [

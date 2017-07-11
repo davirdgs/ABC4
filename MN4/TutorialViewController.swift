@@ -56,11 +56,11 @@ class TutorialViewController: UIViewController {
         wordButton.layer.masksToBounds = true
         
         //Set Hearts
-        heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart1.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart1.tintColor = Styles.heartColor
-        heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart2.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart2.tintColor = Styles.heartColor
-        heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart3.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart3.tintColor = Styles.heartColor
       
         instructionLabel.text = ProjectStrings.instructionString1
@@ -74,9 +74,9 @@ class TutorialViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animate(withDuration: 1, animations: { () -> Void in
             
             self.wordButton.alpha = 0.3
             
@@ -89,7 +89,7 @@ class TutorialViewController: UIViewController {
             
             }, completion: {(result) -> Void in
                 
-                UIView.animateWithDuration(1, animations: { () -> Void in
+                UIView.animate(withDuration: 1, animations: { () -> Void in
                     
                     self.wordButton.alpha = 1
                     /*
@@ -103,12 +103,12 @@ class TutorialViewController: UIViewController {
     }
   
     // Hide status bar from this view
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
       return true
     }
   
-    @IBAction func buttonHandler(sender: AnyObject) {
-        performSegueWithIdentifier("toTutorial2ViewController", sender: self)
+    @IBAction func buttonHandler(_ sender: AnyObject) {
+        performSegue(withIdentifier: "toTutorial2ViewController", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

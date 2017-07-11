@@ -15,12 +15,12 @@ class Styles: NSObject {
     
     static let attributesScore = [
         NSFontAttributeName : fontStyle,
-        NSForegroundColorAttributeName : UIColor.blueColor(),
+        NSForegroundColorAttributeName : UIColor.blue,
     ]
     
     static let attributesTime = [
         NSFontAttributeName : fontStyle,
-        NSForegroundColorAttributeName : UIColor.orangeColor(),
+        NSForegroundColorAttributeName : UIColor.orange,
         
     ]
     ///Background image: newspaper

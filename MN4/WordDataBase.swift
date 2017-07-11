@@ -10,7 +10,7 @@ import Foundation
 
 class WordDataBase {
     
-    private static var dataBase: [Category] = [Category]()
+    fileprivate static var dataBase: [Category] = [Category]()
     
     static func setDataBase() {
         self.dataBase = [

@@ -14,15 +14,15 @@ import Foundation
 
 class Level {
     
-    private var dataBase: [Category]
-    private var rightCategoryId: UInt32    // Category Id of the 3 correct words
-    private var wrongCategoryId: UInt32    // Category Id of the incorrect word
-    private var wrongWord: Word            // Incorrect word choice
-    private var levelWords: [Word]         // Words of the current level
+    fileprivate var dataBase: [Category]
+    fileprivate var rightCategoryId: UInt32    // Category Id of the 3 correct words
+    fileprivate var wrongCategoryId: UInt32    // Category Id of the incorrect word
+    fileprivate var wrongWord: Word            // Incorrect word choice
+    fileprivate var levelWords: [Word]         // Words of the current level
 
     init() {
         
-        let langId = NSLocale.preferredLanguages()[0]
+        let langId = Locale.preferredLanguages[0]
         //print(langId)
         
         // Gets the dataBase
@@ -50,7 +50,7 @@ class Level {
         randomizeLevelWords()
     }
     
-    private func setCategoryIds() {
+    fileprivate func setCategoryIds() {
         
         // Randomly chooses the category Ids of the right and wrong words
         self.rightCategoryId = arc4random_uniform(UInt32(dataBase.count))
@@ -61,10 +61,10 @@ class Level {
         }
     }
     
-    private func setLevelWords() {
+    fileprivate func setLevelWords() {
         
         var wrongWordIndex: Int
-        var rightWordIndexes: [Int] = [Int](count: 3, repeatedValue: 0)
+        var rightWordIndexes: [Int] = [Int](repeating: 0, count: 3)
         
         // Generates random indexes to get the words from the database
         wrongWordIndex = Int(arc4random_uniform(UInt32(dataBase[Int(wrongCategoryId)].words.count)))
@@ -107,7 +107,7 @@ class Level {
 // MARK: - Other Methods
 
     // Fisher-Yates/Knuth Shuffle
-    private func randomizeLevelWords() {
+    fileprivate func randomizeLevelWords() {
         
         let size: Int = self.levelWords.count
         

@@ -40,11 +40,11 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         tutorialLabel.font = Styles.getFont()
       
         //Set Hearts
-        heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart1.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart1.tintColor = Styles.heartColor
-        heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart2.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart2.tintColor = Styles.heartColor
-        heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart3.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart3.tintColor = Styles.heartColor
       
         //Buttons border
@@ -72,10 +72,10 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         
         let finalString = NSMutableAttributedString(string:"Faça o maior número de ")
-        finalString.appendAttributedString(attributedString2)
-        finalString.appendAttributedString(attributedString3)
-        finalString.appendAttributedString(attributedString4)
-        finalString.appendAttributedString(attributedString5)
+        finalString.append(attributedString2)
+        finalString.append(attributedString3)
+        finalString.append(attributedString4)
+        finalString.append(attributedString5)
         
         
         //tutorialLabel.attributedText = ProjectStrings.instructionString2
@@ -96,9 +96,9 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        UIView.animateWithDuration(1.3, delay: 0, options: .Repeat, animations: { () -> Void in
+        UIView.animate(withDuration: 1.3, delay: 0, options: .repeat, animations: { () -> Void in
             
             self.auxiliarView1.alpha = 0.5
             
@@ -107,13 +107,13 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
             
             }, completion: {(result) -> Void in
                 
-                UIView.animateWithDuration(1.3, animations: { () -> Void in
+                UIView.animate(withDuration: 1.3, animations: { () -> Void in
                     
                     self.auxiliarView1.alpha = 0
-                    self.countdown.textColor = UIColor.whiteColor()
+                    self.countdown.textColor = UIColor.white
                     
                     self.auxiliarView2.alpha = 0
-                    self.countdown.textColor = UIColor.whiteColor()
+                    self.countdown.textColor = UIColor.white
                     
                 })
                 
@@ -124,8 +124,8 @@ class Tutorial2ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func tapReceived(sender: AnyObject) {
-        performSegueWithIdentifier("toTutorial3ViewController", sender: self)
+    @IBAction func tapReceived(_ sender: AnyObject) {
+        performSegue(withIdentifier: "toTutorial3ViewController", sender: self)
     }
 
 }

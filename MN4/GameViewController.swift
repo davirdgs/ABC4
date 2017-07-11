@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
     var wrongWord: Word = Word(word: "", difficulty: "")
     var levelWords: [Word] = [Word]()
     var seconds = 10
-    var timer:NSTimer!
+    var timer:Timer!
     
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -55,11 +55,11 @@ class GameViewController: UIViewController {
         option4.layer.masksToBounds = true
       
         //Set Hearts
-        heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart1.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart1.tintColor = Styles.heartColor
-        heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart2.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart2.tintColor = Styles.heartColor
-        heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart3.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart3.tintColor = Styles.heartColor
       
         
@@ -82,7 +82,7 @@ class GameViewController: UIViewController {
         option4.titleLabel!.font = Styles.getFont()
         
         //Setting the countdown
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.subtractTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.subtractTime), userInfo: nil, repeats: true)
  
         setNewLevel()
     }
@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
     }
   
     // Hide status bar from this view
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
       return true
     }
   
@@ -117,7 +117,7 @@ class GameViewController: UIViewController {
         }
     }
 
-    @IBAction func buttonHandler1(sender: AnyObject) {
+    @IBAction func buttonHandler1(_ sender: AnyObject) {
 
         if option1.titleLabel?.text != self.wrongWord.word {
             playerMissed()
@@ -128,7 +128,7 @@ class GameViewController: UIViewController {
         setNewLevel()
     }
 
-    @IBAction func buttonHandler2(sender: AnyObject) {
+    @IBAction func buttonHandler2(_ sender: AnyObject) {
 
         if option2.titleLabel?.text != self.wrongWord.word {
             playerMissed()
@@ -139,7 +139,7 @@ class GameViewController: UIViewController {
         setNewLevel()
     }
     
-    @IBAction func buttonHandler3(sender: AnyObject) {
+    @IBAction func buttonHandler3(_ sender: AnyObject) {
 
         if option3.titleLabel?.text != self.wrongWord.word {
             playerMissed()
@@ -150,7 +150,7 @@ class GameViewController: UIViewController {
         setNewLevel()
     }
     
-    @IBAction func buttonHandler4(sender: AnyObject) {
+    @IBAction func buttonHandler4(_ sender: AnyObject) {
 
         if option4.titleLabel?.text != self.wrongWord.word {
             playerMissed()
@@ -174,26 +174,26 @@ class GameViewController: UIViewController {
         updateHearts()
         
         //Prepare buttons
-        option1.setTitle(self.levelWords[0].word, forState: UIControlState.Normal)
+        option1.setTitle(self.levelWords[0].word, for: UIControlState())
         option1.titleLabel?.numberOfLines = 1
         option1.titleLabel?.adjustsFontSizeToFitWidth  = true
-        option1.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
-        option1.titleLabel?.textAlignment = NSTextAlignment.Center
-        option2.setTitle(self.levelWords[1].word, forState: UIControlState.Normal)
+        option1.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        option1.titleLabel?.textAlignment = NSTextAlignment.center
+        option2.setTitle(self.levelWords[1].word, for: UIControlState())
         option2.titleLabel?.numberOfLines = 1
         option2.titleLabel?.adjustsFontSizeToFitWidth  = true
-        option2.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
-        option2.titleLabel?.textAlignment = NSTextAlignment.Center
-        option3.setTitle(self.levelWords[2].word, forState: UIControlState.Normal)
+        option2.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        option2.titleLabel?.textAlignment = NSTextAlignment.center
+        option3.setTitle(self.levelWords[2].word, for: UIControlState())
         option3.titleLabel?.numberOfLines = 1
         option3.titleLabel?.adjustsFontSizeToFitWidth  = true
-        option3.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
-        option3.titleLabel?.textAlignment = NSTextAlignment.Center
-        option4.setTitle(self.levelWords[3].word, forState: UIControlState.Normal)
+        option3.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        option3.titleLabel?.textAlignment = NSTextAlignment.center
+        option4.setTitle(self.levelWords[3].word, for: UIControlState())
         option4.titleLabel?.numberOfLines = 1
         option4.titleLabel?.adjustsFontSizeToFitWidth  = true
-        option4.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
-        option4.titleLabel?.textAlignment = NSTextAlignment.Center
+        option4.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        option4.titleLabel?.textAlignment = NSTextAlignment.center
 
     }
 
@@ -213,7 +213,7 @@ class GameViewController: UIViewController {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         if PlayerStatus.lifes < 0 {
             timer.invalidate()
-            performSegueWithIdentifier("toGameOverViewController", sender: self)
+            performSegue(withIdentifier: "toGameOverViewController", sender: self)
         } else {
             setNewLevel()
         }

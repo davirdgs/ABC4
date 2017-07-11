@@ -60,27 +60,27 @@ class Tutorial3ViewController: UIViewController {
         word4.layer.masksToBounds = true
       
         //Set Hearts
-        heart1.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart1.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart1.tintColor = Styles.heartColor
-        heart2.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart2.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart2.tintColor = Styles.heartColor
-        heart3.image = heart1.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        heart3.image = heart1.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         heart3.tintColor = Styles.heartColor
     }
   
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         
         
-        UIView.animateWithDuration(1.3, delay: 0, options: .Repeat ,animations: { () -> Void in
+        UIView.animate(withDuration: 1.3, delay: 0, options: .repeat ,animations: { () -> Void in
             
-            self.heart1.tintColor = UIColor.whiteColor()
-            self.heart2.tintColor = UIColor.whiteColor()
-            self.heart3.tintColor = UIColor.whiteColor()
+            self.heart1.tintColor = UIColor.white
+            self.heart2.tintColor = UIColor.white
+            self.heart3.tintColor = UIColor.white
 
             }, completion: {(result) -> Void in
                 
-                UIView.animateWithDuration(1.3, animations: { () -> Void in
+                UIView.animate(withDuration: 1.3, animations: { () -> Void in
                     
                     self.heart1.tintColor = Styles.heartColor
                     self.heart2.tintColor = Styles.heartColor
