@@ -78,6 +78,12 @@ desc "Take screenshots"
     # )
   end
 
+desc "Create ipa"
+  lane :build do
+    increment_build_number
+    gym
+  end
+
   error do |lane, exception|
     # slack(
     #   message: exception.message,
