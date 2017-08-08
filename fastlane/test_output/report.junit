@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ABC4UITests.xctest' tests='3' failures='0'>
+  <testsuite name='ABC4Tests.MN4Tests' tests='2' failures='0'>
+    <testcase classname='ABC4Tests.MN4Tests' name='testExample' time='0.005'/>
+    <testcase classname='ABC4Tests.MN4Tests' name='testPerformanceExample' time='0.405'/>
+  </testsuite>
+  <testsuite name='ABC4UITests.ABC4UITests' tests='1' failures='0'>
+    <testcase classname='ABC4UITests.ABC4UITests' name='testExample' time='7.999'/>
+  </testsuite>
+</testsuites>

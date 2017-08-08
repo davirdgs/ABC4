@@ -39,7 +39,7 @@ desc "Take screenshots"
     produce(
       app_name: ‘ABC4’,
       language: ‘Portuguese’,
-      app_version: ‘1.1’,
+      app_version: ‘1.3’,
       sku: '123abc'
     )
     # 4
@@ -51,7 +51,7 @@ desc "Take screenshots"
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-  	increment_build_number
+increment_build_number
     # match(type: "appstore") # more information: https://codesigning.guide
     gym # Build your app - more options available
     pilot
